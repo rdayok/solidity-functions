@@ -1,80 +1,35 @@
-# Hello World! in Solidity
+# Functions in Solidity
+
+A solidity smart contract that shows variations of types of functions and the 
+internal and external visibility.
+
+## Description
+
+This program written in solidity programming language shows three types of functions developers can use in
+developing smart contracts. These function types are: "view" -- reads from but does not write to the smart
+contract, "paure" -- niether reads nor writes to the smart contract and "payable" -- Used to accept Ether as input.
+The visibility used for these functions are "internal" and "external". "internal" means the function can only be called
+within the contract and with the contract the inherits from the parent contract of the function. 
+On the other hand, the "external" visibility means the fuction can be called from any where outside teh contract it is 
+contained in.
+This program serves as a simple and straightforward introduction to function types in Solidity programming, and can be 
+used as a stepping stone to dig deeper into solidity programming.
 
 
-## Install
+### Executing program
 
-1. Install [Node.js](https://nodejs.org)
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-   Download and install from the official site.
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file 
+with a .sol extension (e.g., Functions.sol). Copy the code in the file "Functions.sol" found in the contracts directory into your newly created Functions.sol" on Remix IDE
 
-2. Install [Truffle](https://github.com/trufflesuite/truffle)
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.25" (or another compatible version), and then click on the "Compile Functions.sol" button.
 
-   ```bash
-   npm install -g truffle
-   ```
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "Functions" contract from the dropdown menu, and then click on the "Deploy" button.
 
+Once the contract is deployed, you can interact with the contract by calling the functions in the smart contract. Supply needed variables and the execute to see what the contract can do for you after a successful response.
 
-## Initialize
+## Authors
 
-1. Initialize Truffle in your project folder
-
-   ```bash
-   truffle init
-   ```
-
-   After initialization, you will find two folders called `contracts` and `migrations`. Contracts go in the `contracts` folder while contract deployment settings go in `migrations`.
-
-2. The "Hello World!" contract
-
-   This is an example of a "Hello World!" contract in Solidity. 
-   "HelloWorld.sol" in `contracts` contains the following code:
-
-   ```solidity
-   // SPDX-License-Identifier: MIT
-   // compiler version must be greater than or equal to 0.8.17 and less than 0.9.0
-   pragma solidity ^0.8.17;
-   
-   contract HelloWorld {
-       string public greet = "Hello World!";
-   }   
-   ```
-
-3. Prepare the migration
-
-   "2_deploy_migration.js" in `migrations` contains the following code:
-
-   ```javascript
-   var HelloWorld = artifacts.require("HelloWorld");
-   module.exports = function(deployer) {
-     deployer.deploy(HelloWorld);
-   }
-   ```
-
-4. Start Truffle console in development mode
-
-   ```bash
-   truffle develop
-   ```
-
-   In the Truffle console, execute
-
-   ```bash
-   compile
-   migrate
-   ```
-   If you want to remigrate existing contracts, run `migrate --reset` instead of simply `migrate`.
-
-5. Test your contract
-
-   In the interactive Truffle console, run the following commands:
-
-   ```javascript
-   let instance = await HelloWorld.deployed()
-   instance.greet()
-   ```
-
-   Then you will see:
-
-   ```bash
-   'Hello World!'
-   ```
+Retnaa Maxwell Dayok  
+[@rdayok](https://www.linkedin.com/in/retnaa-dayok-45207219b/)
